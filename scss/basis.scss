@@ -357,15 +357,14 @@ body.is-menu-open { overflow: hidden; }
     }
 
     dl {
-      margin: 0; 
-      width: 100%;
-      text-align: left;
-      padding: 40px 0;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 30px;
-      border-bottom: 1px solid #ccc;
+      margin: 0;
+    width: 100%;
+    text-align: left;
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1px solid #ccc;
 
       dt {
         br {
@@ -522,6 +521,130 @@ body.is-menu-open { overflow: hidden; }
 }
 
 
+/* ===== Profile ===== */
+#profile {
+  padding: 80px 0;
+
+  @media screen and (max-width: 639px) {
+    padding-top: 163px;
+  }
+
+  .profile_box {
+    /* 必要ならレイアウト */
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 40px;
+
+    @media screen and (max-width: 1200px) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    h3 {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 14px;
+
+      @media screen and (max-width: 639px) {
+        gap: 5px;
+        font-size: 18px;
+      }
+
+      /* 上に英字名を表示（不要なら削除OK） */
+      &::before {
+        content: "Yuya Kamachi";
+        letter-spacing: 0.19em;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-size: 0.9em;
+        opacity: 0.85;
+      }
+
+      @media screen and (max-width: 639px) {
+        letter-spacing: 0.1rem;
+      }
+    }
+
+    .info p small {
+      display: block;
+      margin-top: 8px;
+      opacity: 0.7;
+    }
+
+    .top_profile img {
+      width: min(360px, 38vw);
+      height: auto;
+      display: block;
+      margin-left: auto;
+
+      @media screen and (max-width: 1200px) {
+        margin: 0 auto;
+        width: min(420px, 60vw);
+      }
+
+      @media screen and (max-width: 639px) {
+        width: min(300px, 80vw);
+      }
+    }
+  }
+}
+
+/* ===== Descriptions ===== */
+#descript2 {
+  @media screen and (max-width: 639px) {
+    padding-bottom: 0;
+  }
+
+  .phase1,
+  .phase2,
+  .phase3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 53px;
+    padding-top: 60px;
+
+    @media screen and (max-width: 1200px) {
+      flex-direction: column;
+      text-align: left;
+    }
+
+    @media screen and (max-width: 639px) {
+      gap: 11px;
+      padding-top: 40px;
+    }
+
+    img {
+      width: 450px;
+      height: auto;
+
+      @media screen and (max-width: 1200px) {
+        width: 500px;
+      }
+      @media screen and (max-width: 639px) {
+        width: 294px;
+      }
+    }
+
+    p {
+      max-width: 48ch;
+      line-height: 1.9;
+    }
+  }
+
+  /* 2段目だけ左右反転（必要なければ削除） */
+  .phase2 {
+    flex-direction: row-reverse;
+
+    @media screen and (max-width: 1200px) {
+      flex-direction: column;
+    }
+  }
+}
+
+
 
 
 .btn_wk {
@@ -631,6 +754,7 @@ body.is-menu-open { overflow: hidden; }
 }
 
 .title01 {
+    text-align: center;
   position: relative;
   margin-bottom: 30px;
 
@@ -715,7 +839,7 @@ $radius: 12px;
 // レイアウト
 .cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: $gap;
 
     @media (max-width: 960px) {
@@ -730,7 +854,7 @@ $radius: 12px;
     overflow: hidden;
     border-radius: $radius;
     aspect-ratio: 16 / 9; // 比率固定
-    color: #fff;
+    color: #000000;
     text-decoration: none;
     isolation: isolate; // 擬似要素の重なり制御
 
@@ -779,6 +903,7 @@ $radius: 12px;
       align-items: center;
       text-align: center;
       padding: 2rem;
+      background-color: #fff;
     }
 
     // ホバー：画像拡大＋少し暗く

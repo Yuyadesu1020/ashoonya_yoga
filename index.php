@@ -19,7 +19,6 @@
                 <img src="img/slide_003.jpg" alt="" class="slide__img">
             </div>
 
-            <!-- スライドの“上”に常時重ねるキャッチ -->
             <div id="catch">
                 <img src="img/catch.png" alt="キャッチフレーズ">
             </div>
@@ -27,7 +26,7 @@
 
         <div class="l-main">
 
-            <section>
+            <!-- <section>
                 <div class="bg-blue half">
                     <section class="contents-width">
                         <div class="top-business-box">
@@ -42,18 +41,18 @@
                                         週に一度、ご自身のための大切なリフレッシュ時間を一緒に過ごしましょう。
 
                                     </p>
-                                    <!-- <p class="btn_wk btn-l"><a href="primigo.php"><span>詳細を見る</span></a></p> -->
+                                   
                                     <p class="btn01"><a href="contact.php"><span>プロフィールへ</span></a></p>
                                 </div>
                             </div>
                         </div>
                     </section>
                 </div>
-            </section>
+            </section> -->
 
             <section class="news">
                 <div class="single" data-aos="fade" data-aos-delay="800" data-aos-duration="800">
-                    <h3 class="title01 type2"><span class="ja">ブログ</span><span class="eng">Blog</span></h3>
+                    <h3 class="title01"><span class="ja">ブログ</span><span class="eng">Blog</span></h3>
                     <div class="row">
                         <dl class="first_row">
                             <dt>
@@ -76,22 +75,24 @@
                 <div class="single" data-aos="fade" data-aos-delay="800" data-aos-duration="800">
                     <h3 class="title01 type2"><span class="ja">コンテンツ</span><span class="eng">Contents</span></h3>
                     <div class="cards">
+
                         <a class="card" href="#">
-                            <figure class="card__img"><img src="img/top_002.jpg" alt=""></figure>
+                            <div class="card__body">
+                                <h2 class="card__title">プロフィール</h2>
+                            </div>
+                        </a>
+                        <a class="card" href="#">
+                            <!-- <figure class="card__img"><img src="img/top_002.jpg" alt=""></figure> -->
                             <div class="card__body">
                                 <h2 class="card__title">クラス＆料金</h2>
-                                <p class="card__text">テキストが入ります。テキストが入ります。</p>
                             </div>
-                            <span class="card__cta">View More</span>
+                            <!-- <span class="card__cta">View More</span> -->
                         </a>
 
                         <a class="card" href="#">
-                            <figure class="card__img"><img src="img/top_001.jpg" alt=""></figure>
                             <div class="card__body">
                                 <h2 class="card__title">予約・お問い合わせ</h2>
-                                <p class="card__text">テキストが入ります。テキストが入ります。</p>
                             </div>
-                            <span class="card__cta">View More</span>
                         </a>
                     </div>
                 </div>
