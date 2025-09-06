@@ -12,7 +12,7 @@
     <?php include 'header.php'; ?>
 
     <main>
-        <section class="hero">
+        <!-- <section class="hero">
             <div class="slide" id="heroSlide">
                 <img src="img/slide_001.jpg" alt="" class="slide__img is-active">
                 <img src="img/slide_002.jpg" alt="" class="slide__img">
@@ -22,35 +22,40 @@
             <div id="catch">
                 <img src="img/catch.png" alt="キャッチフレーズ">
             </div>
+        </section> -->
+
+        <section id="hero">
+            <div class="catchphrase">
+                <div>
+                    <h1>Ashoonya yoga</h1>
+                    <p>
+                        MEIO UNIVERSITY <br />
+                        WEB DESIGNER
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <p>
+                        Ashoonya yoga（アシューニャヨガ）。<br />
+                        名護の穏やかな時間に寄り添う小さな教室です。<br />
+                        少人数だから届く、ていねいなガイド。<br />
+                        週に一度、あなたのためだけの静かなリセット。<br />
+                        インドでの学びと人とのつながりを礎に、<br />
+                        呼吸・姿勢・意識を一つに。<br />
+                        無理なく、心地よく、続けられるヨガを。<br />
+                        今日の自分を、やさしく好きになれる場所へ。
+                    </p>
+                </div>
+                <div class="scrolldown2">
+                    <span>Scroll</span>
+                </div>
+            </div>
         </section>
 
         <div class="l-main">
 
-            <!-- <section>
-                <div class="bg-blue half">
-                    <section class="contents-width">
-                        <div class="top-business-box">
-                            <div class="inner">
-                                <div class="img">
-                                    <img src="img/free_001.jpeg" alt="" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1200">
-                                </div>
-                                <div class="txt" data-aos="fade" data-aos-delay="800" data-aos-duration="800">
-                                    <p>
-                                        「Ashoonya yoga（アシューニャヨガ）」へようこそ。<br>
-                                        名護の静かな時間の中で、少人数制ならではの落ち着いたヨガを楽しんでいただけます。<br>
-                                        週に一度、ご自身のための大切なリフレッシュ時間を一緒に過ごしましょう。
-
-                                    </p>
-                                   
-                                    <p class="btn01"><a href="contact.php"><span>プロフィールへ</span></a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </section> -->
-
-            <section class="news">
+            <section class="news bg-yoga">
                 <div class="single" data-aos="fade" data-aos-delay="800" data-aos-duration="800">
                     <h3 class="title01"><span class="ja">ブログ</span><span class="eng">Blog</span></h3>
                     <div class="row">
@@ -69,9 +74,7 @@
                         <a href="https://ashoonyayoga.blogspot.com/" target="_blank">一覧を見る</a>
                     </p>
                 </div>
-            </section>
 
-            <section>
                 <div class="single" data-aos="fade" data-aos-delay="800" data-aos-duration="800">
                     <h3 class="title01 type2"><span class="ja">コンテンツ</span><span class="eng">Contents</span></h3>
                     <div class="cards">
@@ -105,15 +108,7 @@
     <?php include 'footer.php'; ?>
 
 
-    <script>
-        // 画像を含む全リソースの読み込み完了後に初期化＆再計測
-        window.addEventListener('load', () => {
-            AOS.init({
-                once: false
-            }); // 好みで
-            AOS.refresh(); // 画像読み込み後に位置を再計算
-        });
-    </script>
+
     <script>
         window.addEventListener('load', function() {
             viewSlide('.slide img');

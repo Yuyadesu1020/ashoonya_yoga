@@ -16,7 +16,7 @@
             <div class="single">
                 <div class="profile_box">
                     <div>
-                        <h3>かまち ゆうや</h3>
+                        <h3>あき</h3>
                         <div class="info">
                             <p>
                                 2000年生まれ。熊本県出身。
@@ -29,14 +29,14 @@
                                 経て、Webデザイナーになることを目指しています。
                                 <br />
                                 <small>
-                                    university student / design / coding
+                                    Yoga / Nago / India
                                 </small>
                             </p>
                         </div>
                     </div>
 
                     <div class="top_profile">
-                        <img src="./img/profile_me切り抜き.png" alt="自撮り" loading="lazy" />
+                        <img src="./img/profile_001.jpg" alt="自撮り" loading="lazy" />
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
             <div class="single">
                 <div class="phase1">
                     <div>
-                        <img src="./img/profileimg①.png" alt="砂浜で飛んでいる人たち">
+                        <img src="" alt="砂浜で飛んでいる人たち" data-aos="fade" data-aos-delay="800" data-aos-duration="800">
                     </div>
                     <p>
                         沖縄生活すでに6年が過ぎました。
@@ -61,9 +61,9 @@
                         いつか体を壊しそうで不安におびえる日々ではある...
                     </p>
                 </div>
-                <div class="phase2">
+                <div class="phase2" data-aos="fade" data-aos-delay="800" data-aos-duration="800">
                     <div>
-                        <img src="./img/profileimg②.png" alt="砂浜で飛んでいる人たち">
+                        <img src="" alt="砂浜で飛んでいる人たち">
                     </div>
                     <p>
                         沖縄に来てから最初に進みたかった分野は観光。しかし、
@@ -71,9 +71,9 @@
                         コロナの影響を受け、自分を見つめ直し、もっと自由な生活と仕事をしたいという想いからIT分野へと踏み入れました。旅行をするのはとても好きで、沖縄のいろんな観光地を学校の休日にまわっていました。けど、それは仕事ではなく、プライベートとして楽しみたいというのが今の思いです。
                     </p>
                 </div>
-                <div class="phase3">
+                <div class="phase3" data-aos="fade" data-aos-delay="800" data-aos-duration="800">
                     <div>
-                        <img src="./img/profileimg③.png" alt="砂浜で飛んでいる人たち">
+                        <img src="" alt="砂浜で飛んでいる人たち">
                     </div>
                     <p>
                         その後は2023年のセブ留学でエンジニアになるためにITを勉強し始めたのですが、
@@ -88,6 +88,7 @@
     </main>
 
     <?php include 'footer.php'; ?>
+
     </body>
 
 </html>

@@ -11,7 +11,7 @@
                             alt=""></a></li>
                 <li class="type-insta"><a href="https://lin.ee/wlAOGlm" target="_blank"
                         rel="noopener"><img
-                            src="img/icon_insta.png"
+                            src="img/icon_line.png"
                             alt=""></a></li>
             </ul>
             <p class="address">
@@ -37,3 +37,13 @@
 <script src="js/basis.js"></script>
 <link rel="stylesheet" href="aos/aos.css">
 <script src="aos/aos.js" defer></script>
+
+<script>
+    // 画像を含む全リソースの読み込み完了後に初期化＆再計測
+    window.addEventListener('load', () => {
+        AOS.init({
+            once: false
+        }); // 好みで
+        AOS.refresh(); // 画像読み込み後に位置を再計算
+    });
+</script>
