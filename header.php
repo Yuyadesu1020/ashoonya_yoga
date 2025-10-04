@@ -1,10 +1,17 @@
-<link href="https://use.fontawesome.com/releases/v7.0.1/css/all.css" rel="stylesheet">
-
-<link rel="stylesheet" href="reset.css">
-<link href="css/basis.css" rel="stylesheet" />
-<link href="css/common.css" rel="stylesheet" />
-
+<!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/basis.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+<!-- Favicon（暫定・404防止） -->
+<link rel="icon" href="data:," />
 
 
 </head>
@@ -42,8 +49,8 @@
                         </li>
                         <li>
                             <a href="price.php">
-                                <span class="ja">クラス＆料金</span>
-                                <span class="eng">Classes & Pricing</span>
+                                <span class="ja">クラス・料金</span>
+                                <span class="eng">Classes & Price</span>
                             </a>
                         </li>
                         <li>

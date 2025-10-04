@@ -36,7 +36,7 @@
             </div>
             <div>
                 <div>
-                    <p>
+                    <p class="tcenter fchosei">
                         Ashoonya yoga（アシューニャヨガ）。<br />
                         名護の穏やかな時間に寄り添う小さな教室です。<br />
                         少人数だから届く、ていねいなガイド。<br />
@@ -57,16 +57,16 @@
 
             <section class="news bg-yoga">
                 <div class="single" data-aos="fade" data-aos-delay="800" data-aos-duration="800">
-                    <h3 class="title01"><span class="ja">ブログ</span><span class="eng">Blog</span></h3>
+                    <h3 class="title01 type2"><span class="ja">ブログ</span><span class="eng">Blog</span></h3>
                     <div class="row">
                         <dl class="first_row">
                             <dt>
                                 2025.8.14 <br class="desktop-hidden">
                                 <span>お知らせ</span>
                             </dt>
-                            <p>
-                                テスト文です。
-                            </p>
+                            <a href="https://ashoonyayoga.blogspot.com/2025/08/blog-post.html" target="_blank">
+                                ホームページ開設しました。
+                            </a>
                         </dl>
 
                     </div>
@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="single" data-aos="fade" data-aos-delay="800" data-aos-duration="800">
-                    <h3 class="title01 type2"><span class="ja">コンテンツ</span><span class="eng">Contents</span></h3>
+                    <h3 class="title01 type2 tright"><span class="ja">コンテンツ</span><span class="eng">Contents</span></h3>
                     <div class="cards">
 
                         <a class="card" href="#">
@@ -109,7 +109,7 @@
 
 
 
-    <script>
+    <!-- <script>
         window.addEventListener('load', function() {
             viewSlide('.slide img');
         });
@@ -117,24 +117,22 @@
         function viewSlide(className, slideNo = -1) {
             let imgArray = document.querySelectorAll(className);
             if (slideNo >= 0) {
-                // 初回以外は現在のスライドを消す
                 imgArray[slideNo].style.opacity = 0;
             }
             slideNo++;
             if (slideNo >= imgArray.length) {
-                slideNo = 0; // 次のスライドがなければ最初に戻る
+                slideNo = 0; 
             }
             imgArray[slideNo].style.opacity = 1;
 
-            let msec = 3000; // ★ 固定で3秒に設定（自由に変更可）
+            let msec = 3000; 
             setTimeout(function() {
                 viewSlide(className, slideNo);
             }, msec);
         }
-    </script>
-    <script>
+    </script> -->
+    <!-- <script>
         const slide = document.getElementById('heroSlide');
-        // ここが重要：.slide__img だけ取得（catchは含めない）
         const slides = slide.querySelectorAll('.slide__img');
         let i = 0;
 
@@ -144,10 +142,10 @@
 
         show(i);
         setInterval(() => {
-            i = (i + 1) % slides.length; // 3枚でループ
+            i = (i + 1) % slides.length;
             show(i);
         }, 5000);
-    </script>
+    </script> -->
     </body>
 
 </html>

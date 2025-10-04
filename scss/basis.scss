@@ -1,9 +1,9 @@
 @charset "utf-8";
-@import "_var.scss";
+@import "./var";
 
 body {
     color: rgb(43.25, 43.25, 43.25);
-    background: #f3f9ff;
+    background: #fdfeff;
     font-family: "Noto Serif JP", serif;
     font-size: 1.2rem;
     line-height: 1.8;
@@ -144,7 +144,6 @@ header {
             position: relative;
             font-size: .8rem;
             line-height: 1.3;
-            font-family: "Ysabeau Infant", sans-serif;
             font-weight: 600;
             letter-spacing: 0.1em;
             color: $blue;
@@ -160,7 +159,6 @@ header {
                     }
 
                     &.eng {
-                    font-family: "Ysabeau Infant", sans-serif;
                     font-weight: 600;
                     letter-spacing: 0.1em;
                     }
@@ -235,6 +233,9 @@ body.is-menu-open { overflow: hidden; }
     width: 95%;
     padding: 80px 0;
     margin: 0 auto;
+    @media all and (max-width: 639px) {
+        padding: 40px 0;
+    }
 }
 
 // .hero {
@@ -303,11 +304,12 @@ body.is-menu-open { overflow: hidden; }
   width: 100%;
   display: flex;
   flex-wrap: wrap;            
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   gap: 150px;
-  padding: 250px 0 50px;
+  padding: 250px 0 200px;
   margin: 0;
+
 
   @media screen and (max-width: 1430px){ gap: 0; }
 
@@ -315,6 +317,9 @@ body.is-menu-open { overflow: hidden; }
   @media screen and (max-width: 1060px){
     position: relative;
     flex-direction: column;
+  }
+  @media all and (max-width: 639px) {
+    padding: 150px 0 40px;
   }
 
   /* ===== 左：キャッチコピー ===== */
@@ -336,7 +341,6 @@ body.is-menu-open { overflow: hidden; }
       /* 位置はフローに載せる（wrapに合わせる） */
       @media screen and (max-width: 1040px){
         position: static;
-        padding-left: 50px;
         z-index: 1;
       }
       @media screen and (max-width: 640px){ padding-left: 25px; }
@@ -398,9 +402,13 @@ body.is-menu-open { overflow: hidden; }
     .scrolldown2{
       position: absolute;
       top: 93%;
-      right: 12%;
+      right: 3%;
+      @media screen and (max-width: 1060px){
+        top: -7%;
+      }
       @media screen and (max-width: 639px){
         top: -4%;
+        right: 9%;
       }
       span{
         position: absolute;
@@ -432,88 +440,54 @@ body.is-menu-open { overflow: hidden; }
       @keyframes cirlemovehide { 0%{opacity:0;} 50%{opacity:1;} 80%{opacity:.9;} 100%{opacity:0;} }
     }
   }
+
+  .fchosei{
+    @media all and (max-width: 639px) {
+        font-size: .8rem;
+    }
+  }
 }
 
 
-
-/* セクション全体に固定背景を入れる */
 .bg-yoga {
   position: relative;
-  isolation: isolate;   /* 擬似要素の重なりをこの要素内で完結 */
-  overflow: hidden;     /* 角丸時のにじみ防止（角丸にしないなら任意） */
+  isolation: isolate;
+  overflow: hidden;
 
-  /* 背景画像（1枚・固定） */
   &::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: -2;
-    background-image: url('../img/bg-yoga.png');
+    background-image: url('../img/12pose.jpg');
     background-size: 30%;
-    background-position: 5% 80%;
+    background-position: 5% 50%;
     background-repeat: no-repeat;
-    background-attachment: fixed;   /* ← これで固定 */
+    background-attachment: fixed;  
+    @media all and (max-width: 639px) {
+        background-size: 39%;
+        background-position: 0% 23%;
+    }
+    @media all and (max-width: 480px) {
+        background-size: 39%;
+        background-position: 0% 31%;
+    }
   }
 
-  /* 薄いベール（不透明感） */
   &::after {
     content: "";
     position: absolute;
     inset: 0;
     z-index: -1;                    
-    background-color: rgba(255,255,255,var(--veil, .55));
+    background-color: rgba(255,255,255,var(--veil, .85));
     pointer-events: none; 
   }
 }
 
-/* iOS 等で fixed が効かない端末はスクロールにフォールバック（任意） */
 @media (hover: none) and (pointer: coarse) {
   .bg-yoga::before { background-attachment: scroll; }
 }
 
-.bg-yoga {
-  position: relative;
-  isolation: isolate;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -2;
-    background-image: url('../img/bg-yoga.png');
-    background-size: 30%;
-    background-position: 5% 80%;
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background-color: rgba(255,255,255,var(--veil, .55));
-    pointer-events: none;
-  }
-}
-
-/* レスポンシブ（〜639px） */
-@media all and (max-width: 639px) {
-  .bg-yoga {
-    &::before {
-      background-attachment: scroll;        
-      background-size: clamp(220px, 55vw, 380px); 
-      background-position: 6% 39%;       
-    }
-    &::after {
-      background-color: rgba(255,255,255, var(--veil-sp, .68));
-    }
-  }
-}
-
-@media (hover: none) and (pointer: coarse) {
-  .bg-yoga::before { background-attachment: scroll; }
-}
 
 
 .bg-blue {
@@ -557,7 +531,7 @@ body.is-menu-open { overflow: hidden; }
   text-align: center;
 
   h2 {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 
   .row {
@@ -570,10 +544,11 @@ body.is-menu-open { overflow: hidden; }
     }
 
     dl {
-      margin: 0;
+    margin: 0;
     width: 100%;
     text-align: left;
     padding: 24px 0;
+    gap: 25px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -602,17 +577,17 @@ body.is-menu-open { overflow: hidden; }
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .news {
-    padding-top: 150px;
-  }
-}
+// @media screen and (max-width: 1024px) {
+//   .news {
+//     padding-top: 150px;
+//   }
+// }
 
-@media screen and (max-width: 761px) {
-  .news {
-    padding-top: 50px;
-  }
-}
+// @media screen and (max-width: 761px) {
+//   .news {
+//     padding-top: 50px;
+//   }
+// }
 
 @media screen and (max-width: 761px) {
   .news div dl {
@@ -739,133 +714,157 @@ body.is-menu-open { overflow: hidden; }
 
 /* ===== Profile ===== */
 #profile {
-      padding: 150px 0 0;
+  /* 固定ヘッダーがあるなら余白を変えやすいように可変に */
+  --sticky-top: 110px; // ←ヘッダー高さ＋少し
 
-  @media screen and (max-width: 639px) {
-    padding-top: 163px;
-  }
+  padding: 150px 0 0;
+
+  @media (max-width: 639px) { padding-top: 163px; }
 
   .profile_box {
-    /* 必要ならレイアウト */
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
+    display: flex;
+    align-items: flex-start;
     gap: 40px;
+    flex-wrap: wrap;
 
-    @media screen and (max-width: 1200px) {
-      grid-template-columns: 1fr;
+    /* 写真（左カラム） */
+    .top_profile {
+      order: 0;
+      flex: 0 0 clamp(320px, 40vw, 520px);
+
+      /* ★ ここで追従 ★ */
+      position: sticky;
+      top: var(--sticky-top);
+      align-self: flex-start; // 縦伸び防止
+      height: fit-content;    // Safari対策（任意）
+    }
+
+    /* テキスト（右カラム） */
+    > div:first-child {
+      order: 1;
+      flex: 1 1 420px;
+      min-width: 300px;
+    }
+
+    /* 1200px以下は縦並び・sticky無効 */
+    @media (max-width: 1200px) {
       gap: 24px;
-    }
 
-    h3 {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 14px;
+      .top_profile {
+        order: -1;
+        flex: 1 1 100%;
+        display: flex;
+        justify-content: center;
 
-      @media screen and (max-width: 639px) {
-        gap: 5px;
-        font-size: 18px;
+        position: static;  // ★ SPでは解除
+        top: auto;
       }
-
-      /* 上に英字名を表示（不要なら削除OK） */
-      &::before {
-        content: "Aki";
-        letter-spacing: 0.19em;
-        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-        font-size: 0.9em;
-        opacity: 0.85;
+      > div:first-child {
+        order: 0;
+        flex: 1 1 100%;
       }
-
-      @media screen and (max-width: 639px) {
-        letter-spacing: 0.1rem;
-      }
-    }
-
-    .info p small {
-      display: block;
-      margin-top: 8px;
-      opacity: 0.7;
     }
 
     .top_profile img {
-      width: min(360px, 38vw);
+      width: 100%;
       height: auto;
       display: block;
-      margin-left: auto;
-
-      @media screen and (max-width: 1200px) {
-        margin: 0 auto;
-        width: min(420px, 60vw);
-      }
-
-      @media screen and (max-width: 639px) {
-        width: min(300px, 80vw);
-      }
+      margin: 0;
     }
   }
 }
 
+
+
+
 /* ===== Descriptions ===== */
 #descript2 {
-  @media screen and (max-width: 639px) {
-    padding-bottom: 0;
-  }
+  --sticky-top: 110px; // 固定ヘッダーぶんの上マージン。必要に応じて調整
+
+  @media (max-width: 639px) { padding-bottom: 0; }
 
   .phase1,
   .phase2,
   .phase3 {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
-    gap: 53px;
+    gap: 40px;
     padding-top: 60px;
 
-    @media screen and (max-width: 1200px) {
-      flex-direction: column;
-      text-align: left;
+    p { line-height: 1.9; }
+
+    /* 子要素：画像ラッパー(div) と p を 45%ずつ */
+    > div,
+    > p {
+      flex: 1 1 45%;
+      max-width: 45%;
     }
 
-    @media screen and (max-width: 639px) {
-      gap: 11px;
-      padding-top: 40px;
+    /* ★ 画像ラッパーを追従させる（PCのみ） */
+    > div {
+      position: sticky;
+      top: var(--sticky-top);
+      align-self: flex-start;   // 高さの伸び防止
+      height: fit-content;      // Safari対策（任意）
     }
 
+    /* 画像はラッパー幅いっぱいに */
     img {
-      width: 450px;
+      width: 100%;
       height: auto;
+      display: block;
+    }
 
-      @media screen and (max-width: 1200px) {
-        width: 500px;
+    /* タブレット以下は縦並び＋sticky解除 */
+    @media (max-width: 1200px) {
+      gap: 24px;
+      text-align: left;
+
+      > div,
+      > p {
+        flex: 1 1 100%;
+        max-width: 100%;
       }
-      @media screen and (max-width: 639px) {
-        width: 294px;
+
+      > div {
+        position: static;
+        top: auto;
+      }
+
+      img {
+        max-width: 500px;
+        margin: 0 auto;  // 画像中央寄せ
       }
     }
 
-    p {
-      max-width: 48ch;
-      line-height: 1.9;
+    @media (max-width: 639px) {
+      padding-top: 40px;
+      gap: 11px;
+      img { max-width: 294px; }
     }
   }
 
-  /* 2段目だけ左右反転（必要なければ削除） */
+  /* 2段目だけ左右反転（wrapに強い order 方式） */
   .phase2 {
-    flex-direction: row-reverse;
+    > p   { order: 1; }  // テキスト左
+    > div { order: 2; }  // 画像右
 
-    @media screen and (max-width: 1200px) {
-      flex-direction: column;
+    @media (max-width: 1200px) {
+      > div { order: -1; } // 縦並び時は画像→文章に
+      > p   { order: 0; }
     }
   }
 }
+
+
 
 #price {
   padding: 150px 0 0;
   @media (max-width: 639px) { padding-top: 163px; }
 
   .price-card {
-    max-width: 980px;
     margin: 0 auto;
     background: #fff;
     border: 1.5px solid #222;
@@ -1056,34 +1055,102 @@ body.is-menu-open { overflow: hidden; }
 }
 
 .title01 {
-    text-align: center;
   position: relative;
+  text-align: center;
   margin-bottom: 30px;
+  z-index: 0; 
+  &::before {
+    content: "";
+    position: absolute;
+    left: 49%;
+    top: 38%;
+    transform: translate(-50%, -50%);
+    width: 23%;
+    aspect-ratio: 4 / 4;
+    background: url("../img/12pose.jpg") center/cover no-repeat;
+    opacity: .15;                      
+    pointer-events: none;
+    z-index: -1;   
+    @media all and (max-width: 639px) {
+        width: 34%;
+    }                   
+  }
 
   .ja {
     color: #383838;
     font-weight: 700;
     letter-spacing: .18em;
-    font-size: 2.8rem;
+    font-size: 2rem;
+    @media all and (max-width: 639px) {
+      font-size: 1.5rem;
+    }
   }
 
   .eng {
     font-weight: 700;
-    letter-spacing: .18em;
-    font-size: 1.6rem;
-    font-family: "League Spartan", sans-serif;
-    font-weight: 700;
     letter-spacing: .05em !important;
+    font-size: 1.4rem;
     text-transform: inherit;
     line-height: 1.6;
     color: $blue;
     display: block;
+    @media all and (max-width: 639px) {
+      font-size: 1rem;
+    }
   }
 
-  &.type2{
-    text-align: left !important;
-    @media all and (max-width: 639px) {
-        text-align: center !important;
+  &.type2 {
+    &::before {
+    display: none;             
+  }
+  }
+}
+
+
+
+.title02 {
+  position: relative;
+  padding: 5px 0 5px 25px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+
+  .ja {
+    @include title24;
+    color: $brown;
+  }
+
+  .eng {
+    @include eng;
+    display: block;
+    color: lighten($brown, 30%);
+  }
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    content: "";
+    background: $base_color;
+  }
+
+  &.type1 {
+    &:before {
+      background: $sub_color;
+    }
+  }
+
+  @media all and (max-width: 639px) {
+    padding: 10px 5px 10px 20px;
+    margin-bottom: 20px;
+
+    span {
+      display: block;
+    }
+
+    &:before {
+      left: 5px;
     }
   }
 }
@@ -1098,7 +1165,6 @@ body.is-menu-open { overflow: hidden; }
         border: 1px solid #000;
     text-align: center;
     color: #000000;
-    font-family: "Zen Kaku Gothic New", "YakuHanJP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
     font-weight: 700;
     letter-spacing: 0.2em;
     -webkit-transition: all 0.6s ease;
@@ -1155,10 +1221,10 @@ $radius: 12px;
     display: block;
     overflow: hidden;
     border-radius: $radius;
-    aspect-ratio: 16 / 9; // 比率固定
+    aspect-ratio: 16 / 9; 
     color: #000000;
     text-decoration: none;
-    isolation: isolate; // 擬似要素の重なり制御
+    isolation: isolate; 
 
      transform: translateY(0);
      transition:
@@ -1166,8 +1232,10 @@ $radius: 12px;
      box-shadow .45s ease;
      will-change: transform, box-shadow;
      box-shadow: 0 2px 8px rgba(0,0,0,.04);
+     @media all and (max-width: 639px) {
+        box-shadow: 0 2px 8px rgba(0,0,0,.2);
+     }
 
-    /* PC等のホバー対応デバイスのみ */
     @media (hover: hover) and (pointer: fine) {
         &:hover {
         transform: translateY(-6px);     // ちょい上へ
@@ -1298,6 +1366,9 @@ $radius: 12px;
 #l-footer {
   position: relative;
   padding-top: 80px;
+  @media all and (max-width: 639px) {
+    padding-top: 50px;
+  }
   &:after {
     z-index: -1; 
     pointer-events: none;  
@@ -1310,17 +1381,31 @@ $radius: 12px;
     width: 100%;
   }
 
-  &:before {
-    bottom: 0;
-    height: 50%;
-    background: $blue;
+//   &:before {
+//     bottom: 0;
+//     height: 50%;
+//     background: $blue;
+//     z-index: -2;
+//   }
+
+//   &:after {
+//     top: 0;
+//     height: 70%;
+//     background: $blue;
+//   }
+
+   &::before {
+    top: 0;        
+    height: 50%;    
+    border-top: 1px solid $blue;
     z-index: -2;
   }
 
-  &:after {
-    top: 0;
-    height: 70%;
-    background: $blue;
+  // 下＋左右（1px）
+  &::after {
+    bottom: 0;      
+    height: 70%;  
+    z-index: -1;
   }
 
   .inner {
@@ -1331,9 +1416,12 @@ $radius: 12px;
     padding: 0 10px 60px;
     z-index: 3;
     text-align: center;
+    @media all and (max-width: 639px) {
+        padding: 0;
+    }
   }
 
-  .flogo {
+    .flogo {
     position: relative;
     display: block;
     z-index: 2;
@@ -1341,7 +1429,14 @@ $radius: 12px;
     margin: 0 auto 30px;
     font-size: 24px;
     text-align: center;
-  }
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: filter .3s ease;
+    }
+    }
 
   .footer-sns {
     position: relative;
@@ -1353,13 +1448,13 @@ $radius: 12px;
 
     li { list-style: none; }
 
-    li.type-insta {
+    li.sns-icon {
       a {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 64px;
-        height: 64px;
+        width: 50px;
+        height: 50px;
         padding: 0;
         background: transparent;
         border-radius: 50%;
@@ -1389,81 +1484,116 @@ $radius: 12px;
 
   .address {
     text-align: center;
-    font-size: 1.4rem; // PC
+    font-size: 1rem; // PC
     font-weight: 600;
-    color: $white;
+    color: $brown;
 
     @media (max-width: 639px) {
-      font-size: 13px;
+      font-size: 11px;
     }
   }
 
-  .footer_navi {
-    position: relative;
-    margin-top: 20px;
+.footer_navi {
+  position: relative;
+  margin-top: 20px;
 
-    .globalNav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 0;
+  .globalNav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
 
-      > li {
-        &:not(:last-of-type) {
-          margin-right: 20px;
+    > li {
+      &:not(:last-of-type) {
+        margin-right: 20px;
 
-          @media (max-width: 639px) {
-            margin-right: 0; // モバイルで余白0
-          }
+        @media (max-width: 639px) {
+          margin-right: 0; // モバイルで余白0
+        }
+      }
+
+      @media (max-width: 639px) {
+        // ※ ここ display:none; だと項目が消えるので必要なら外してね
+        // display: none;
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 55%;
+      }
+
+      a,
+      .drop-parent-inner {
+        position: relative;
+        display: inline-block; // 下線幅をテキスト幅に
+        text-align: left;
+        font-size: 1rem; // PC
+        color: $brown;
+
+        // 下線アニメ（PC・タブレット）
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -2px;     // 文字のすぐ下。必要なら0に
+          height: 2px;      // 下線の太さ
+          width: 100%;
+          background: currentColor; // リンク色に追従
+          transform: scaleX(0);
+          transform-origin: left center; // 左から伸びる
+          transition: transform .25s ease;
+          pointer-events: none;
+        }
+
+        // ホバー／キーボードフォーカスで発火
+        &:hover::after,
+        &:focus-visible::after {
+          transform: scaleX(1);
+        }
+
+        // 低モーション設定への配慮（好みで）
+        @media (prefers-reduced-motion: reduce) {
+          &::after { transition: none; }
         }
 
         @media (max-width: 639px) {
-          width: 100%;
-          flex: 0 0 100%;
-          max-width: 55%;
+          font-size: 13px;      // モバイルで文字小さく
+          line-height: 1.8;
+          border-bottom: 1px solid #ffffff; // 既存の固定下線
+
+          // モバイルではアニメは消して被りを防止
+          &::after { display: none; }
         }
 
-        a,
-        .drop-parent-inner {
-          position: relative;
-          display: block;
-          text-align: left;
-          font-size: 1rem; // PC
-          color: $white;
+        span {
+          display: inline-block;
 
-          @media (max-width: 639px) {
-            font-size: 13px;     // モバイルで文字小さく
-            line-height: 1.8;
-            border-bottom: 1px solid #3a352e;
-          }
-
-          span {
-            display: inline-block;
-
-            /* PCではjaが1.3rem。モバイルでは必ず親サイズに合わせる */
-            &.ja {
-              color: #3a352e;
-              padding: 4px;
-              font-size: 1.3rem;
-              font-weight: 500;
-
-              @media (max-width: 639px) {
-                font-size: inherit; // = 13px
-              }
-            }
-
-            &.eng {
-              display: none;
-            }
+          &.ja {
+            color: #3a352e;
+            padding: 4px;
+            font-size: 1.3rem;
+            font-weight: 500;
 
             @media (max-width: 639px) {
-              font-size: inherit; // 念のためspan全体も継承
+              font-size: inherit; // = 13px
             }
+          }
+
+          &.eng { display: none; }
+
+          @media (max-width: 639px) {
+            font-size: inherit;
           }
         }
       }
+
+      // 「現在ページ」を常に下線表示したい場合（任意）
+      a[aria-current="page"]::after,
+      a.is-current::after {
+        transform: scaleX(1);
+      }
     }
   }
+}
+
 
   .copyright {
     position: relative;
@@ -1471,13 +1601,78 @@ $radius: 12px;
     margin: 0 auto;
     padding-bottom: 30px;
     font-size: 1.2rem; // PC
-    color: $white;
+    color: $brown;
 
     @media (max-width: 639px) {
       font-size: 13px;
     }
   }
 }
+
+html.is-loading,
+body.is-loading { height: 100%; overflow: hidden; }
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  gap: 18px;
+  background: #ffffff;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .6s ease, visibility .6s ease;
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.loader__ring {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid rgba(0,0,0,.15);
+  border-top-color: #111;
+  animation: spin 1s linear infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.loader__logo {
+  max-width: 160px;
+  opacity: .9;
+  /* ロゴを白っぽくしたい場合（黒ロゴ→白化）*/
+  filter: brightness(0) invert(1);
+  user-select: none;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* 任意：XHR/Fetch中に出す簡易プログレスライン */
+body.busy::before {
+  content:"";
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px; width: 0;
+  background: #111;
+  z-index: 10000;
+  animation: bar 1.2s ease-in-out infinite;
+}
+@keyframes bar {
+  0% { width: 0; }
+  50% { width: 70vw; }
+  100% { width: 100vw; }
+}
+
  
 
 

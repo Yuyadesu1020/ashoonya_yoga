@@ -5,18 +5,18 @@
                     src="./img/logo.png"
                     alt="株式会社幸不動産"></a>
             <ul class="footer-sns b-m30">
-                <li class="type-insta"><a href="https://www.instagram.com/aki.gauri?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"
+                <li class="sns-icon"><a href="https://www.instagram.com/aki.gauri?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"
                         rel="noopener"><img
                             src="img/icon_insta.png"
                             alt=""></a></li>
-                <li class="type-insta"><a href="https://lin.ee/wlAOGlm" target="_blank"
+                <li class="sns-icon"><a href="https://lin.ee/wlAOGlm" target="_blank"
                         rel="noopener"><img
                             src="img/icon_line.png"
                             alt=""></a></li>
             </ul>
             <p class="address">
                 沖縄県名護市<br>
-                ashoonyayoga@gmail.com</p>
+                ashoonyayoga□gmail.com</p>
             <nav class="footer_navi">
                 <ul class="globalNav">
                     <li><a href="#">ホーム</a></li>
@@ -34,7 +34,13 @@
     </div>
 </footer>
 
-<script src="js/basis.js"></script>
+<div id="loader" class="loader" aria-live="polite" aria-busy="true">
+    <div class="loader__ring" role="img" aria-label="読み込み中"></div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+<script src="js/basis.js" defer></script>
 <link rel="stylesheet" href="aos/aos.css">
 <script src="aos/aos.js" defer></script>
 

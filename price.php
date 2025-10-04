@@ -14,6 +14,8 @@
     <main>
         <section id="price">
             <div class="single">
+                <h3 class="title01"><span class="ja">クラス・料金</span><span class="eng">Classes & Price</span></h3>
+                <h2 class="title02"><span class="ja">インドスタイル ハタヨガ</span><span class="eng">Indian-style Hatha Yoga</span></h2>
                 <div class="price-card">
 
                     <ul class="price-notes p0">
